@@ -2,8 +2,6 @@
 #include "lcd.h"
 #include "timer0.h"
 
-unsigned char LCD_CGRAM_pattern[8]={0x02,0x09,0x05,0x15,0x15,0x05,0x09,0x02};
-
 /* Config LCD */
 void LCD_Initialize(void)
 {
@@ -96,52 +94,3 @@ void LCD_CLEAR_DISPLAY(void)
       TIMER0_Delay_1ms(2);
 }
 
-/* Shift left LCD */
-void LCD_LSHIFT(void)
-{
-      LCD_CMD(0x18);
-}
-
-/* Shift right LCD */
-void LCD_RSHIFT(void)
-{
-      LCD_CMD(0x1C);
-}
-
-void LCD_test(void)
-{
-      /* Coloca el cursor en la linea 1, columna 1 del LCD */
-      LCD_LOCATE(1,1);
-	
-      /* Despliega mensaje en la posición actual del cursor */
-      LCD_printstring(">PIC CURIOSITY\n");
-	
-      /* Coloca el cursor en la linea 2, columna 1 del LCD */
-      LCD_LOCATE(2,1);
-	
-      /* Despliega mensaje en la posición actual del cursor */
-      LCD_printstring("*18F57Q43 MCU*\n");
-}
-
-void LCD_printCGRAM(char charcode)
-{
-        LCD_RS_High;
-        //LCD_RW_High;
-        LCD_Enable_High;
-        LCD_Port = charcode;
-        LCD_Enable_Low;
-        TIMER0_Delay_1ms(1);
-}
-
-void LCD_writeCGRAM(void)
-{
-      unsigned char j;
-      /*If during the initialization the display was programmed to automatically increment, */
-      /* then only the single initial address, 40, need to be sent. */
-      LCD_CMD(0x40);
-      for (j=0; j<8; j++)
-      {
-        LCD_printchar(LCD_CGRAM_pattern[j]);
-      }
-   
-}

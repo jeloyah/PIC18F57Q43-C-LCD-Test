@@ -80,22 +80,8 @@ void LCD_printchar(char ascode);
 /* Escribe una cadena en LCD */
 void LCD_printstring(char *text);
 
-
 /* Coloca cursor en coordenada (renglon,columna) */
 void LCD_LOCATE(char row, char column);
-
-/* Desplaza LCD a la izquierda */
-void LCD_LSHIFT(void);
-
-/* Desplaza LCD a la derecha */
-void LCD_RSHIFT(void);
-
-/* DEspliega texto de prueba */
-void LCD_test(void);
-
-void LCD_writeCGRAM(void);
-
-void LCD_printCGRAM(char charcode);
 
 /* Definiciones */
 #define LCD_Enable_High LATE |= 0x01
