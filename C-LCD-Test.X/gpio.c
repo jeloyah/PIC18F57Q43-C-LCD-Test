@@ -28,10 +28,10 @@ void PortB_Initialize(void)
     ANSELB = 0x00;
     
     /* Rpull-ups */
-    WPUB = 0x00;
+    WPUB = 0x10;
         
     /* Config inputs / outputs */
-    TRISB = 0x00;
+    TRISB = 0x10;
 }
 
 /* PortC initialization */
@@ -44,10 +44,10 @@ void PortC_Initialize(void)
     ANSELC = 0x00;
     
     /* Rpull-ups */
-    WPUC = 0x80;
+    WPUC = 0x00;
         
     /* Config inputs / outputs */
-    TRISC = 0x80;
+    TRISC = 0x00;
 }
     
 /* PortD initialization */
