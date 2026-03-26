@@ -55,7 +55,7 @@ void main(void) {
     {
        
         /* Row 1, column 1 */
-        LCD_LOCATE(4,0);
+        LCD_LOCATE(1,2);
         
         /* Print character M using ASCII code */
 		LCD_printchar(0x4D);
@@ -82,7 +82,7 @@ void main(void) {
         LCD_printchar('C');
 		
 		/* Row 2, column 1 */
-        LCD_LOCATE(3,2);
+        LCD_LOCATE(2,4);
               
         /* Print a string of characters (must end with \n) */
 	    LCD_printstring("Russbell\n");       
