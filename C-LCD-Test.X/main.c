@@ -34,10 +34,7 @@ void main(void) {
     
     /* Config PortF */
     PortF_Initialize();
-    
-    /* Config Timer0 */
-    TIMER0_Initialize();
-    
+     
     /* Config IOC */
     IOC_Initialize();
           
@@ -48,14 +45,13 @@ void main(void) {
     LCD_Initialize();
     
     LCD_CLEAR_DISPLAY();
-    //LCD_writeCGRAM();
-    
+     
     /* infinite loop */
     while(1)
     {
        
-        /* Row 1, column 1 */
-        LCD_LOCATE(1,2);
+        /* Row 1, column 5 */
+        LCD_LOCATE(1,5);
         
         /* Print character M using ASCII code */
 		LCD_printchar(0x4D);
@@ -82,10 +78,10 @@ void main(void) {
         LCD_printchar('C');
 		
 		/* Row 2, column 1 */
-        LCD_LOCATE(2,4);
+        LCD_LOCATE(2,1);
               
         /* Print a string of characters (must end with \n) */
-	    LCD_printstring("Russbell\n");       
+	    LCD_printstring("**PIC18F57Q43**\n");       
               
      } /* while */
         
