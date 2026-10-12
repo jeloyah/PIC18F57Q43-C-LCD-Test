@@ -53,30 +53,9 @@ void main(void) {
         /* Row 1, column 5 */
         LCD_LOCATE(1,5);
         
-        /* Print character M using ASCII code */
-		LCD_printchar(0x4D);
-        
-        /* Print character C using ASCII code */
-        LCD_printchar(0x43);
-        
-        /* Print character U using ASCII code */
-        LCD_printchar(0x55);
-        
-        /* Print space using ASCII code */
-        LCD_printchar(0x20);
-        
-        /* Print space using ASCII code */
-        LCD_printchar(0x20);
-        
-        /* Print character P */
-        LCD_printchar('P');
-        
-        /* Print character I */
-        LCD_printchar('I');
-        
-        /* Print character C */
-        LCD_printchar('C');
-		
+        /* Print a string of characters (must end with \n) */
+	    LCD_printstring("**8-bit MCU**\n");       
+       		
 		/* Row 2, column 1 */
         LCD_LOCATE(2,1);
               
